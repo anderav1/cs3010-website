@@ -120,8 +120,13 @@ function validate() {
 	var marriage = document.getElementById("marriage");
 	var dob = document.getElementById("bday");
 	
-	if (username && pw && fname && lname && add1 && add2 && city && email && gender && marriage && dob) {
-		return (checkValid(username) && checkValid(pw) && pwMatch() && checkValid(fname) && checkValid(lname) && checkValid(add1) && checkValid(add2) && checkValid(city) && validState() && reformatZIP() && reformatPhone() && checkValid(email) && radioCheck(gender) && radioCheck(marriage) && dob.value != "")
+	if (username && pw && fname && lname && add1 && add2 && city && email &&
+		gender && marriage && dob) {
+		return (checkValid(username) && checkValid(pw) && pwMatch() &&
+			checkValid(fname) && checkValid(lname) && checkValid(add1) &&
+			checkValid(add2) && checkValid(city) && validState() &&
+			reformatZIP() && reformatPhone() && checkValid(email) &&
+			radioCheck(gender) && radioCheck(marriage) && dob.value !== "");
 	}
 	return false;
 }

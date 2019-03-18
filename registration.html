@@ -7,63 +7,84 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./css/stylesheet3.css">
 	<link rel="stylesheet" href="./css/registration-styles.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link rel="stylesheet"
+		  href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+		  integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+		  crossorigin="anonymous">
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Abel'>
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Aleo'>
 	<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="./js/form-validation.js"></script>
-	<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
-	<link href='https://fonts.googleapis.com/css?family=Aleo' rel='stylesheet'>
 </head>
 <body onload="registerHandlers();">
 <div class="container-fluid">
 	<div class="row">
 		<div id="header" class="col-xs-12 col-sm-12 col-md-12">
-			<img src="./img/banner.png" alt="Header Banner" style="width:100%">
+			<img src="./img/banner.png" alt="Header Banner" id="banner">
 		</div>
 	</div>
 	<div class="row">
 		<div class="sidebar col-xs-12 col-sm-3 col-md-3">
 			<div id="menu">
-				<a href="./home.html" title="Home" class="menuitem"><img src="./img/home-button.png" alt="Home button"><!--Home--></a><br/>
-					<a href="./registration.html" title="Registration" class="menuitem"><img src="./img/registration-button.png" alt="Registration button"><!--Registration--></a>
-					<br/>
-					<a href="./animations.html" title="Animations" class="menuitem"><img src="./img/animation-button.png" alt="Animation button"><!--Animations--></a><br/>
+				<a href="./home.html" title="Home" class="menuitem">
+					<img src="./img/home-button.png" alt="Home button"></a><br/>
+				<a href="./registration.html" title="Registration" class="menuitem">
+					<img src="./img/registration-button.png" alt="Registration button">
+				</a><br/>
+				<a href="./animations.html" title="Animations" class="menuitem">
+					<img src="./img/animation-button.png" alt="Animation button"></a><br/>
 			</div>
 		</div>
+
 		<div id="content" class="col-xs-12 col-sm-9 col-md-9">
 			<h1>Registration</h1>
 			<p><b>Ready to surrender your soul to the Magic Conch?</b></p>
 			<p><i><small>*$50.00 registration fee for the Church of the Magic Conch
-				includes an official Magic Conch replica and a t-shirt.</small></i></p><br/>
+				includes an official Magic Conch replica and a t-shirt.</small>
+			</i></p><br/>
 
-			<form id="registrationForm" onsubmit="return(validate());" onreset="clearFields();">
+			<form id="registrationForm" onsubmit="return(validate());"
+				  onreset="clearFields();">
 			<div class="form-col col-xs-12 col-sm-7">
 				<div class="form-group">
 					<div class="form-field">
-						<input type="text" name="username" id="username" maxlength="50" pattern="^[\w]{6,50}$" onblur="checkValid(this);" onfocus="blankSlate(this);" required>
+						<input type="text" name="username" id="username"
+							   maxlength="50" pattern="^[\w\.\-]{6,50}$"
+							   onblur="checkValid(this);"
+							   onfocus="blankSlate(this);" required>
 						<label for="username">Username</label>
 						<div class="popup">
-							<span class="requirements">Must be 6-50 characters</span>
+							<span class="requirements">Must be 6-50 characters<br/>
+							Can only contain alphanumeric characters,
+								underscores (_), dashes (-), and/or periods (.)
+							</span>
 						</div>
 						<span class="popupicon">
 							<i class="fas fa-check"></i></span>
 					</div>
 					<div class="form-field">
-						<input type="password" name="pw" id="pw" maxlength="50" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z\d]).{8,50}" onblur="checkValid(this);" onfocus="blankSlate(this);" required>
+						<input type="password" name="pw" id="pw" maxlength="50"
+							   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z\d]).{8,50}"
+							   onblur="checkValid(this);"
+							   onfocus="blankSlate(this);" required>
 						<label for="pw">Password</label>
 						<div class="popup">
 							<span class="requirements">
 								Must be 8-50 characters<br/>
-								Must contain at least 1 uppercase letter, 1 lowercase letter, 1 digit, and 1 special character</span>
+								Must contain at least 1 uppercase letter,
+								1 lowercase letter, 1 digit, and 1 special
+								character</span>
 						</div>
 						<span class="popupicon"><i class="fas fa-check"></i></span>
 					</div>
 					<div class="form-field">
-						<input type="password" name="confirm-pw" id="confirm-pw" maxlength="50" onfocus="blankSlate(this);" required>
+						<input type="password" name="confirm-pw" id="confirm-pw"
+							   maxlength="50" onfocus="blankSlate(this);" required>
 						<label for="confirm-pw">Confirm password</label>
 						<div class="popup">
-							<span class="requirements">Passwords do not match</span>
+							<span class="requirements">Passwords must match</span>
 						</div>
 						<span class="popupicon"><i class="fas fa-check"></i></span>
 					</div>
@@ -72,40 +93,61 @@
 					<div class="one-row">
 						<div class="col-xs-6">
 							<div class="form-field">
-								<input type="text" name="fname" id="fname" maxlength="50" pattern="^[A-Za-z]{1,50}$" onblur="checkValid(this);" onfocus="blankSlate(this);" required>
-								<label for="fname">First name</label><!--<br/>-->
-								<span class="popupicon"><i class="fas fa-check"></i></span>
+								<input type="text" name="fname" id="fname"
+									   maxlength="50" pattern="^[A-Za-z]{1,50}$"
+									   onblur="checkValid(this);"
+									   onfocus="blankSlate(this);" required>
+								<label for="fname">First name</label>
+								<span class="popupicon">
+									<i class="fas fa-check"></i></span>
 							</div>
 						</div>
 						<div class="col-xs-6">
 							<div class="form-field">
-								<input type="text" name="lname" id="lname" maxlength="50" pattern="^[A-Za-z]{1,50}$" onblur="checkValid(this);" onfocus="blankSlate(this);" required>
-								<label for="lname">Last name</label><!--<br/>-->
-								<span class="popupicon"><i class="fas fa-check"></i></span>
+								<input type="text" name="lname" id="lname"
+									   maxlength="50" pattern="^[A-Za-z]{1,50}$"
+									   onblur="checkValid(this);"
+									   onfocus="blankSlate(this);" required>
+								<label for="lname">Last name</label>
+								<span class="popupicon">
+									<i class="fas fa-check"></i></span>
 							</div>
 						</div>
 					</div>
 					<div class="form-field">
-						<input type="text" name="address1" id="address1" maxlength="100" pattern="^.{1,100}$" onblur="checkValid(this);" onfocus="blankSlate(this);" required>
+						<input type="text" name="address1" id="address1"
+							   maxlength="100" pattern="^.{1,100}$"
+							   onblur="checkValid(this);"
+							   onfocus="blankSlate(this);" required>
 						<label for="address1">Address line 1</label><br/>
-						<span class="popupicon"><i class="fas fa-check"></i></span>
+						<span class="popupicon">
+							<i class="fas fa-check"></i></span>
 					</div>
 					<div class="form-field">
-						<input type="text" name="address2" id="address2" maxlength="100" pattern="^.{1,100}$" onblur="checkValid(this);" onfocus="blankSlate(this);">
+						<input type="text" name="address2" id="address2"
+							   maxlength="100" pattern="^.{1,100}$"
+							   onblur="checkValid(this);"
+							   onfocus="blankSlate(this);">
 						<label for="address2">Address line 2</label><br/>
-						<span class="popupicon"><i class="fas fa-check"></i></span>
+						<span class="popupicon">
+							<i class="fas fa-check"></i></span>
 					</div>
 					<div class="one-row">
 						<div class="col-xs-9">
 							<div class="form-field">
-								<input type="text" name="city" id="city" maxlength="50" pattern="^[\w\.\s]{2,50}$" onblur="checkValid(this);" onfocus="blankSlate(this);" required>
+								<input type="text" name="city" id="city"
+									   maxlength="50" pattern="^[\w\.\s]{2,50}$"
+									   onblur="checkValid(this);"
+									   onfocus="blankSlate(this);" required>
 								<label for="city">City</label>
-								<span class="popupicon"><i class="fas fa-check"></i></span>
+								<span class="popupicon">
+									<i class="fas fa-check"></i></span>
 							</div>
 						</div>
 						<div class="col-xs-3">
 							<div class="form-field">
-								<select name="state" id="state" onfocus="blankSlate(this);" required>
+								<select name="state" id="state"
+										onfocus="blankSlate(this);" required>
 								<option value="defst" selected>State:</option>
 								<option value="al">AL</option>
 								<option value="ak">AK</option>
@@ -162,9 +204,15 @@
 					</div>
 					<div class="col-xs-5">
 						<div class="form-field">
-							<input type="text" name="zip" id="zip" placeholder="00000" onfocus="blankSlate(this);" required>
+							<input type="text" name="zip" id="zip"
+								   placeholder="00000"
+								   onfocus="blankSlate(this);" required>
 							<label for="zip">ZIP code</label><br/>
-							<span class="popupicon"><i class="fas fa-check"></i></span>
+							<div class="popup">
+								<span class="requirements">First five digits</span>
+							</div>
+							<span class="popupicon">
+								<i class="fas fa-check"></i></span>
 						</div>
 					</div>
 				</div>
@@ -172,46 +220,66 @@
 			<div class="form-col col-xs-12 col-sm-5">
 				<div class="form-group">
 					<div class="form-field">
-						<input type="text" name="phone" id="phone" placeholder="555-555-5555" onfocus="blankSlate(this);" required>
+						<input type="text" name="phone" id="phone"
+							   placeholder="000-000-0000"
+							   onfocus="blankSlate(this);" required>
 						<label for="phone">Phone number</label><br/>
-						<span class="popupicon"><i class="fas fa-check"></i></span>
+						<div class="popup">
+							<span class="requirements">Include area code<br/>
+							Please omit country code (e.g., +1)</span>
+						</div>
+						<span class="popupicon">
+							<i class="fas fa-check"></i></span>
 					</div>
 					<div class="form-field">
-						<input type="email" name="email" id="email" pattern="^\w+\@\w+\.\w+(\.\w+)?$" onblur="checkValid(this);" onfocus="blankSlate(this);" required>
+						<input type="email" name="email" id="email"
+							   placeholder="somebody@example.com"
+							   pattern="^\w+\@\w+\.\w+(\.\w+)?$"
+							   onblur="checkValid(this);"
+							   onfocus="blankSlate(this);" required>
 						<label for="email">Email address</label><br/>
-						<span class="popupicon"><i class="fas fa-check"></i></span>
+						<span class="popupicon">
+							<i class="fas fa-check"></i></span>
 					</div>
 				</div>
 				<div class="multi-choice" id="gender">
 					<label class="container">Male
-						<input type="radio" name="gender" id="mgen" value="male" required>
+						<input type="radio" name="gender" id="mgen" value="male"
+							   required>
 						<span class="radio-button"></span>
 					</label>
 					<label class="container">Female
-						<input type="radio" name="gender" id="fgen" value="female" required>
+						<input type="radio" name="gender" id="fgen"
+							   value="female" required>
 						<span class="radio-button"></span>
 					</label>
 					<label class="container">Other
-						<input type="radio" name="gender" id="ogen" value="other" required>
+						<input type="radio" name="gender" id="ogen"
+							   value="other" required>
 						<span class="radio-button"></span>
 					</label>
 				</div><br/>
 				<div class="multi-choice" id="marriage">
 					<label class="container">Married
-						<input type="radio" name="marriage" id="married" value="married" required>
+						<input type="radio" name="marriage" id="married"
+							   value="married" required>
 						<span class="radio-button"></span>
 					</label>
 					<label class="container">Single
-						<input type="radio" name="marriage" id="single" value="single" required>
+						<input type="radio" name="marriage" id="single"
+							   value="single" required>
 						<span class="radio-button"></span>
 					</label>
 					<label class="container">Divorced/separated
-						<input type="radio" name="marriage" id="divorced" value="divorced" required>
+						<input type="radio" name="marriage" id="divorced"
+							   value="divorced" required>
 						<span class="radio-button"></span>
 					</label>
 				</div>
 				<div class="form-field">
-					<input type="date" name="bday" id="bday" min="1900-01-01" max="2018-12-31" onblur="checkValid(this);" onfocus="blankSlate(this);" required>
+					<input type="date" name="bday" id="bday" min="1900-01-01"
+						   max="2018-12-31" onblur="checkValid(this);"
+						   onfocus="blankSlate(this);" required>
 					<label for="bday">Date of birth</label><br/>
 					<span class="popupicon"><i class="fas fa-check"></i></span>
 				</div>
@@ -219,31 +287,38 @@
 			
 			</form>
 			<div class="buttons col-xs-12 col-sm-12 col-md-12">
-				<button type="submit" value="Submit" id="submit-registration" form="registrationForm">Submit</button>
-				<button type="reset" form="registrationForm" id="reset-form">Reset</button>
+				<button type="submit" value="Submit" id="submit-registration"
+						form="registrationForm">Submit</button>
+				<button type="reset" form="registrationForm"
+						id="reset-form">Reset</button>
 			</div>
 		</div>
 	</div>
+
 	<div class="row bottom">
 		<footer class="col-xs-12 col-sm-12 col-md-12">
 			<h3 id="footer-title">Related Sites</h3>
 			<div class="col-xs-12 col-sm-4 col-md-4">
 				<a href="https://spongebob.fandom.com/wiki/Club_SpongeBob"
-				   title="Club SpongeBob | Encyclopedia SpongeBobia" target="_blank">
+				   title="Club SpongeBob | Encyclopedia SpongeBobia"
+				   target="_blank">
 					Club SpongeBob | Encyclopedia SpongeBobia</a>
 				<br/>
-				<a href="https://www.imdb.com/title/tt0832773/" title = "Club SpongeBob IMDB Page"
+				<a href="https://www.imdb.com/title/tt0832773/"
+				   title = "Club SpongeBob IMDB Page"
 				   target="_blank">"Club SpongeBob" IMDB</a><br/>
 			</div>
 			<div class="col-xs-12 col-sm-4 col-md-4">
 				<a href="https://en.wikipedia.org/wiki/SpongeBob_SquarePants"
 				   title="SpongeBob Squarepants | Wikipedia" target="_blank">
 					SpongeBob Squarepants (Wikipedia)</a><br/>
-				<a href="https://www.facebook.com/spongebob/" title="SpongeBob Facebook"
+				<a href="https://www.facebook.com/spongebob/"
+				   title="SpongeBob Facebook"
 				   target="_blank">SpongeBob Facebook</a><br/>
 			</div>
 			<div class="col-xs-12 col-sm-4 col-md-4">
-				<a href="https://www.nick.com/shows/spongebob-squarepants" title="SpongeBob on Nick.com"
+				<a href="https://www.nick.com/shows/spongebob-squarepants"
+				   title="SpongeBob on Nick.com"
 				   target="_blank">SpongeBob on Nick.com</a><br/>
 				<a href="https://twitter.com/SpongeBob?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
 				   title="SpongeBob Twitter" target="_blank">SpongeBob Twitter</a><br/>

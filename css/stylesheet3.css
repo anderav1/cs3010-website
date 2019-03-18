@@ -113,7 +113,8 @@ p {
 }
 
 .menuitem:hover {
-	background-image: linear-gradient(rgba(230, 230, 37, 0.4), rgba(230, 230, 37, 0.4)), url("../img/bamboo-bkgrd-sm.png");
+	background-image: linear-gradient(rgba(230, 230, 37, 0.4),
+	rgba(230, 230, 37, 0.4)), url("../img/bamboo-bkgrd-sm.png");
 }
 
 a {
