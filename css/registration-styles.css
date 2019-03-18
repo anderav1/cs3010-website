@@ -214,6 +214,10 @@ label {
 	display: table;
 }
 
+.one-row + .form-field label {
+	top: 0px;
+}
+
 /*div .one-row {
 	position: relative;
 	display: inline;
