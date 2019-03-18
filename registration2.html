@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./css/stylesheet3.css">
-	<link rel="stylesheet" href="./css/registration-styles.css">
+	<link rel="stylesheet" href="./css/registration-styles2.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -31,6 +31,7 @@
 					<a href="./animations.html" title="Animations" class="menuitem"><img src="./img/animation-button.png" alt="Animation button"><!--Animations--></a><br/>
 			</div>
 		</div>
+		
 		<div id="content" class="col-xs-12 col-sm-9 col-md-9">
 			<h1>Registration</h1>
 			<p><b>Ready to surrender your soul to the Magic Conch?</b></p>
@@ -38,74 +39,72 @@
 				includes an official Magic Conch replica and a t-shirt.</small></i></p><br/>
 
 			<form id="registrationForm" onsubmit="return(validate());" onreset="clearFields();">
-			<div class="form-col col-xs-12 col-sm-7">
+			<div class="form-col col-xs-12 col-sm-6 col-md-6">
 				<div class="form-group">
 					<div class="form-field">
-						<input type="text" name="username" id="username" maxlength="50" pattern="^[\w]{6,50}$" onblur="checkValid(this);" onfocus="blankSlate(this);" required>
-						<label for="username">Username</label>
-						<div class="popup">
-							<span class="requirements">Must be 6-50 characters</span>
-						</div>
-						<span class="popupicon">
-							<i class="fas fa-check"></i></span>
+						<label class="inner-label">Username
+							<input type="text" name="username" id="username" maxlength="50" pattern="^[\w]{6,50}$" onblur="checkValid(this);" onfocus="blankSlate(this);" required>
+							<div class="popup">
+								<span class="requirements">Must be 6-50 characters</span>
+							</div>
+							<span class="popupicon"><i class="fas fa-check"></i></span>
+						</label>
 					</div>
 					<div class="form-field">
-						<input type="password" name="pw" id="pw" maxlength="50" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z\d]).{8,50}" onblur="checkValid(this);" onfocus="blankSlate(this);" required>
-						<label for="pw">Password</label>
-						<div class="popup">
-							<span class="requirements">
-								Must be 8-50 characters<br/>
-								Must contain at least 1 uppercase letter, 1 lowercase letter, 1 digit, and 1 special character</span>
-						</div>
-						<span class="popupicon"><i class="fas fa-check"></i></span>
+						<label class="inner-label">Password
+							<input type="password" name="pw" id="pw" maxlength="50" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z\d]).{8,50}" onblur="checkValid(this);" onfocus="blankSlate(this);" required>
+							<div class="popup">
+								<span class="requirements">
+									Must be 8-50 characters<br/>
+									Must contain at least 1 uppercase letter, 1 lowercase letter, 1 digit, and 1 special character</span>
+							</div>
+							<span class="popupicon"><i class="fas fa-check"></i></span>
+						</label>
 					</div>
 					<div class="form-field">
-						<input type="password" name="confirm-pw" id="confirm-pw" maxlength="50" onfocus="blankSlate(this);" required>
-						<label for="confirm-pw">Confirm password</label>
-						<div class="popup">
-							<span class="requirements">Passwords do not match</span>
-						</div>
-						<span class="popupicon"><i class="fas fa-check"></i></span>
+						<label class="inner-label">Confirm password
+							<input type="password" name="confirm-pw" id="confirm-pw" maxlength="50" onfocus="blankSlate(this);" required>
+							<div class="popup">
+								<span class="requirements">Passwords do not match</span>
+							</div>
+							<span class="popupicon"><i class="fas fa-check"></i></span>
+						</label>
 					</div>
 				</div>
 				<div class="form-group">
-					<div class="one-row">
-						<div class="col-xs-6">
-							<div class="form-field">
-								<input type="text" name="fname" id="fname" maxlength="50" pattern="^[A-Za-z]{1,50}$" onblur="checkValid(this);" onfocus="blankSlate(this);" required>
-								<label for="fname">First name</label><!--<br/>-->
-								<span class="popupicon"><i class="fas fa-check"></i></span>
-							</div>
-						</div>
-						<div class="col-xs-6">
-							<div class="form-field">
-								<input type="text" name="lname" id="lname" maxlength="50" pattern="^[A-Za-z]{1,50}$" onblur="checkValid(this);" onfocus="blankSlate(this);" required>
-								<label for="lname">Last name</label><!--<br/>-->
-								<span class="popupicon"><i class="fas fa-check"></i></span>
-							</div>
-						</div>
+					<div class="form-field">
+						<label class="inner-label">First name
+							<input type="text" name="fname" id="fname" maxlength="50" pattern="^[A-Za-z]{1,50}$" onblur="checkValid(this);" onfocus="blankSlate(this);" required>
+							<span class="popupicon"><i class="fas fa-check"></i></span>
+						</label>
 					</div>
 					<div class="form-field">
-						<input type="text" name="address1" id="address1" maxlength="100" pattern="^.{1,100}$" onblur="checkValid(this);" onfocus="blankSlate(this);" required>
-						<label for="address1">Address line 1</label><br/>
-						<span class="popupicon"><i class="fas fa-check"></i></span>
+						<label class="inner-label">Last name
+							<input type="text" name="lname" id="lname" maxlength="50" pattern="^[A-Za-z]{1,50}$" onblur="checkValid(this);" onfocus="blankSlate(this);" required>
+							<span class="popupicon"><i class="fas fa-check"></i></span>
+						</label>
 					</div>
 					<div class="form-field">
-						<input type="text" name="address2" id="address2" maxlength="100" pattern="^.{1,100}$" onblur="checkValid(this);" onfocus="blankSlate(this);">
-						<label for="address2">Address line 2</label><br/>
-						<span class="popupicon"><i class="fas fa-check"></i></span>
+						<label class="inner-label">Address line 1
+							<input type="text" name="address1" id="address1" maxlength="100" pattern="^.{1,100}$" onblur="checkValid(this);" onfocus="blankSlate(this);" required>
+							<span class="popupicon"><i class="fas fa-check"></i></span>
+						</label>
 					</div>
-					<div class="one-row">
-						<div class="col-xs-9">
-							<div class="form-field">
-								<input type="text" name="city" id="city" maxlength="50" pattern="^[\w\.\s]{2,50}$" onblur="checkValid(this);" onfocus="blankSlate(this);" required>
-								<label for="city">City</label>
-								<span class="popupicon"><i class="fas fa-check"></i></span>
-							</div>
-						</div>
-						<div class="col-xs-3">
-							<div class="form-field">
-								<select name="state" id="state" onfocus="blankSlate(this);" required>
+					<div class="form-field">
+						<label class="inner-label">Address line 2
+							<input type="text" name="address2" id="address2" maxlength="100" pattern="^.{1,100}$" onblur="checkValid(this);" onfocus="blankSlate(this);">
+							<span class="popupicon"><i class="fas fa-check"></i></span>
+						</label>
+					</div>
+					<div class="form-field">
+						<label class="inner-label">City
+							<input type="text" name="city" id="city" maxlength="50" pattern="^[\w\.\s]{2,50}$" onblur="checkValid(this);" onfocus="blankSlate(this);" required>
+							<span class="popupicon"><i class="fas fa-check"></i></span>
+						</label>
+					</div>
+					<div class="form-field">
+						<label>
+							<select name="state" id="state" onfocus="blankSlate(this);" required>
 								<option value="defst" selected>State:</option>
 								<option value="al">AL</option>
 								<option value="ak">AK</option>
@@ -156,33 +155,35 @@
 								<option value="wa">WA</option>
 								<option value="wv">WV</option>
 								<option value="wi">WI</option>
-								<option value="wy">WY</option></select>
-							</div>
-						</div>
+								<option value="wy">WY</option>
+							</select>
+						</label>
 					</div>
-					<div class="col-xs-5">
-						<div class="form-field">
+					<div class="form-field">
+						<label class="inner-label">ZIP code
 							<input type="text" name="zip" id="zip" placeholder="00000" onfocus="blankSlate(this);" required>
-							<label for="zip">ZIP code</label><br/>
 							<span class="popupicon"><i class="fas fa-check"></i></span>
-						</div>
+						</label>
 					</div>
 				</div>
+				<br/>
 			</div>
-			<div class="form-col col-xs-12 col-sm-5">
+			<div class="form-col col-xs-12 col-sm-6 col-md-6">
 				<div class="form-group">
 					<div class="form-field">
-						<input type="text" name="phone" id="phone" placeholder="555-555-5555" onfocus="blankSlate(this);" required>
-						<label for="phone">Phone number</label><br/>
-						<span class="popupicon"><i class="fas fa-check"></i></span>
+						<label class="inner-label">Phone number
+							<input type="text" name="phone" id="phone" placeholder="555-555-5555" onfocus="blankSlate(this);" required>
+							<span class="popupicon"><i class="fas fa-check"></i></span>
+						</label>
 					</div>
 					<div class="form-field">
-						<input type="email" name="email" id="email" pattern="^\w+\@\w+\.\w+(\.\w+)?$" onblur="checkValid(this);" onfocus="blankSlate(this);" required>
-						<label for="email">Email address</label><br/>
-						<span class="popupicon"><i class="fas fa-check"></i></span>
+						<label class="inner-label">Email address
+							<input type="email" name="email" id="email" pattern="^\w+\@\w+\.\w+(\.\w+)?$" onblur="checkValid(this);" onfocus="blankSlate(this);" required>
+							<span class="popupicon"><i class="fas fa-check"></i></span>
+						</label>
 					</div>
 				</div>
-				<div class="multi-choice" id="gender">
+				<form class="multi-choice" id="gender">
 					<label class="container">Male
 						<input type="radio" name="gender" id="mgen" value="male" required>
 						<span class="radio-button"></span>
@@ -195,8 +196,8 @@
 						<input type="radio" name="gender" id="ogen" value="other" required>
 						<span class="radio-button"></span>
 					</label>
-				</div><br/>
-				<div class="multi-choice" id="marriage">
+				</form><br/>
+				<form class="multi-choice" id="marriage">
 					<label class="container">Married
 						<input type="radio" name="marriage" id="married" value="married" required>
 						<span class="radio-button"></span>
@@ -209,14 +210,13 @@
 						<input type="radio" name="marriage" id="divorced" value="divorced" required>
 						<span class="radio-button"></span>
 					</label>
-				</div>
+				</form>
 				<div class="form-field">
-					<input type="date" name="bday" id="bday" min="1900-01-01" max="2018-12-31" onblur="checkValid(this);" onfocus="blankSlate(this);" required>
-					<label for="bday">Date of birth</label><br/>
-					<span class="popupicon"><i class="fas fa-check"></i></span>
+					<label class="inner-label">
+						<input type="date" name="bday" id="bday" min="1900-01-01" max="2018-12-31" onblur="checkValid(this);" onfocus="blankSlate(this);" required>
+					</label>
 				</div>
 			</div>
-			
 			</form>
 			<div class="buttons col-xs-12 col-sm-12 col-md-12">
 				<button type="submit" value="Submit" id="submit-registration" form="registrationForm">Submit</button>
@@ -224,6 +224,7 @@
 			</div>
 		</div>
 	</div>
+	
 	<div class="row bottom">
 		<footer class="col-xs-12 col-sm-12 col-md-12">
 			<h3 id="footer-title">Related Sites</h3>
